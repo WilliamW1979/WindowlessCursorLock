@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net10.0-windows</TargetFramework>
+		<UseWindowsForms>true</UseWindowsForms>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+		<AssemblyName>WindowlessCursorLock</AssemblyName>
+		<RootNamespace>WindowlessCursorLock</RootNamespace>
+		<ApplicationIcon>windowlesscursorlock.ico</ApplicationIcon>
+		<Version>1.0.0</Version>
+		<Authors>WilliamW1979</Authors>
+		<Product>Windowless Cursor Lock</Product>
+		<Description>Confines the system cursor to whichever monitor a watched application currently occupies, preventing cursor escape from borderless-windowed games.</Description>
+	</PropertyGroup>
+	<ItemGroup>
+	  <None Remove="github.jpg" />
+	  <None Remove="Kofi.png" />
+	  <None Remove="WardShield.png" />
+	</ItemGroup>
+	<ItemGroup>
+		<EmbeddedResource Include="github.jpg" />
+		<EmbeddedResource Include="Kofi.png" />
+		<EmbeddedResource Include="WardShield.png" />
+		<EmbeddedResource Include="windowlesscursorlock.ico">
+			<LogicalName>WindowlessCursorLock.windowlesscursorlock.ico</LogicalName>
+		</EmbeddedResource>
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="splash.png" CopyToOutputDirectory="PreserveNewest" Condition="Exists('splash.png')" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Tomlyn" Version="2.7.0" />
+	</ItemGroup>
+</Project>

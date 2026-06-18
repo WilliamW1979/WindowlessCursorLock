@@ -1,0 +1,12 @@
+bin/
+obj/
+*.user
+.vs/
+publish/
+installer/innosetup/Output/
+installer/wix/bin/
+installer/wix/obj/
+*.msi
+*.exe
+!installer/**/*.iss
+.env

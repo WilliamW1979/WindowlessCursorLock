@@ -43,41 +43,6 @@ To run directly without installing:
 dotnet run --project src\WindowlessCursorLock\WindowlessCursorLock.csproj
 ```
 
-## Building the installers
-
-Both installer options publish a self-contained build first:
-
-```bash
-dotnet publish src\WindowlessCursorLock\WindowlessCursorLock.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true
-```
-
-### Option 1: EXE installer (Inno Setup)
-
-1. Install [Inno Setup](https://jrsoftware.org/isinfo.php) (free).
-2. Open `installer\innosetup\WindowlessCursorLock.iss` in the Inno Setup Compiler and click Build, or run:
-   ```bash
-   iscc installer\innosetup\WindowlessCursorLock.iss
-   ```
-3. Output: `installer\innosetup\Output\WindowlessCursorLockSetup.exe`
-
-### Option 2: MSI installer (WiX v4)
-
-1. Install the WiX CLI: `dotnet tool install --global wix`
-2. From `installer\wix`, run:
-   ```bash
-   wix build WindowlessCursorLock.wxs -d PublishDir=..\..\src\WindowlessCursorLock\bin\Release\net10.0-windows\win-x64\publish -arch x64 -o WindowlessCursorLock.msi
-   ```
-
-Both installers place the app in `Program Files\Windowless Cursor Lock`, add a Start Menu entry, and register a proper uninstaller. Settings always live in `%AppData%\WindowlessCursorLock`, untouched by uninstall unless you choose otherwise.
-
-## Customizing the Splash Screen
-
-To add a custom splash screen image, place a `splash.png` file in `src\WindowlessCursorLock\`. It will be copied to the output directory and displayed on first run.
-
-## Adding an icon
-
-The project currently uses the default Windows application icon. To add your own, drop a `windowlesscursorlock.ico` into `src\WindowlessCursorLock\`, then add `<ApplicationIcon>windowlesscursorlock.ico</ApplicationIcon>` to the `<PropertyGroup>` in `WindowlessCursorLock.csproj`.
-
 ## License
 
 MIT — see `LICENSE`.

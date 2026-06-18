@@ -20,37 +20,12 @@ If you `Win+Shift+Left/Right` the game to a different monitor, the clip follows 
 - Auto-detects which monitor the focused app is on — no manual monitor selection needed
 - Optional launch at Windows startup
 - Settings persisted to `%AppData%\WindowlessCursorLock\settings.toml`
-- **Splash screen** on first run with logo display
-- **Automatic updates** from GitHub releases (configurable: notify, auto-download, or auto-install)
-- **Proper uninstaller** with option to preserve or remove settings
 
 ## Requirements
 
 - Windows 10/11
 - [.NET 10 SDK](https://dotnet.microsoft.com/download) (to build from source)
 
-## Building from source
-
-```bash
-git clone https://github.com/WilliamW1979/WindowlessCursorLock.git
-cd WindowlessCursorLock
-dotnet build WindowlessCursorLock.sln -c Release
-```
-
-To run directly without installing:
-
-```bash
-dotnet run --project src\WindowlessCursorLock\WindowlessCursorLock.csproj
-```
-
 ## License
 
 MIT — see `LICENSE`.
-
-## Contributing
-
-PRs welcome. A few known areas for improvement if anyone wants to pick them up:
-- Swap the polling loop for `SetWinEventHook` for lower latency / lower CPU usage
-- Per-monitor DPI edge cases on mixed-DPI multi-monitor setups
-- A proper app icon
-- Make the borderless-detection pixel tolerance user-configurable in Settings

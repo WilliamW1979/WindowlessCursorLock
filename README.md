@@ -2,8 +2,6 @@
 
 Confines your mouse cursor to whichever monitor your chosen game (or any application) currently occupies — so a borderless-windowed game can never lose your cursor to a second monitor mid-fight.
 
-Built because TERA Classic's Fullscreen Windowless mode doesn't actually capture the cursor, and Windows is happy to let it wander off to your other monitor at the worst possible moment.
-
 ## How it works
 
 Windowless Cursor Lock sits in your system tray. Every 250ms (configurable) it checks which window is currently focused.
